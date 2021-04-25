@@ -3,15 +3,14 @@
   hosts: localhost
   tasks:
     - name: pull images specifed in docker-compose
-#<<<<<<< HEAD
-#      command: docker-compose pull
-#    - name: run the pulled docker images in detached mode
-#      command: docker-compose up -d
-=======
-      command: docker-compose -f docker-compose.yml pull
+      command: docker-compose pull
     - name: run the pulled docker images in detached mode
-      command: docker-compose -f docker-compose.yml up -d
->>>>>>> a42a6d61c7003941dbc6da6a1995ddb5e1d23adf
+      command: docker-compose up -d
+#=======
+#      command: docker-compose -f docker-compose.yml pull
+#    - name: run the pulled docker images in detached mode
+#      command: docker-compose -f docker-compose.yml up -d
+#>>>>>>> a42a6d61c7003941dbc6da6a1995ddb5e1d23adf
 #        shell: docker-compose pull
 #        args:
 #          chdir: ./..
