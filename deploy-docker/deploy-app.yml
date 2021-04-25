@@ -3,8 +3,13 @@
   hosts: all
   tasks:
     - name: pull images specifed in docker-compose
-      ansible.builtin.shell:
-        cmd: docker-compose pull
-    - name: run the pulled docker image in detached mode
-      ansible.builtin.shell:
-        cmd: docker-compose up -d
+        shell: docker-compose pull
+        args:
+          chdir: ./..
+#        become: True # because you're using sudo
+#    - name: pull images specifed in docker-compose
+#      ansible.builtin.shell:
+#        cmd: docker-compose pull
+#    - name: run the pulled docker image in detached mode
+#      ansible.builtin.shell:
+#        cmd: docker-compose up -d
