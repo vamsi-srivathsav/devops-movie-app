@@ -3,7 +3,7 @@
   hosts: all
   tasks:
     - name: pull images specifed in docker-compose
-      command: docker-compose pull
+      command: docker-compose -f /docker-compose.yml pull
 #        shell: docker-compose pull
 #        args:
 #          chdir: ./..
