@@ -3,9 +3,11 @@
   hosts: localhost
   tasks:
     - name: ls and pwd
-      command: ls
+      command:
+        cmd: ls
     - name: pwd
-      command: pwd
+      command:
+        cmd: pwd
 #    - name: pull images specifed in docker-compose
 #      command: docker-compose -f docker-compose.yml pull
 #    - name: run the pulled docker images in detached mode
