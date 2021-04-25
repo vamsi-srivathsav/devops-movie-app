@@ -3,9 +3,10 @@
   hosts: all
   tasks:
     - name: pull images specifed in docker-compose
-        shell: docker-compose pull
-        args:
-          chdir: ./..
+      command: docker-compose pull
+#        shell: docker-compose pull
+#        args:
+#          chdir: ./..
 #        become: True # because you're using sudo
 #    - name: pull images specifed in docker-compose
 #      ansible.builtin.shell:
