@@ -1,9 +1,11 @@
 ---
 - name: Pull and Run docker image
-  hosts: all
+  hosts: localhost
   tasks:
     - name: pull images specifed in docker-compose
-      command: docker-compose -f /docker-compose.yml pull
+      command: docker-compose -f ./docker-compose.yml pull
+    - name: run the pulled docker images in detached mode
+      command: docker-compose -f ./docker-compose.yml up -d
 #        shell: docker-compose pull
 #        args:
 #          chdir: ./..
