@@ -2,12 +2,6 @@
 - name: Pull and Run docker image
   hosts: all
   tasks:
-    - name: whoami
-      command:
-        cmd: whoami
-    - name: ls
-      command:
-        cmd: ls
     - name: copy docker compose file from folder to remote host
       copy:
         src: ./docker-compose.yml
