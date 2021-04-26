@@ -1,13 +1,17 @@
 ---
 - name: Pull and Run docker image
-  hosts: localhost
+  hosts: all
   tasks:
-    - name: ls and pwd
+    - name: whoami
+      command:
+        cmd: whoami
+    - name: ls
       command:
         cmd: ls
-    - name: pwd
-      command:
-        cmd: pwd
+    - name: copy docker compose file from folder to remote host
+      copy:
+        src: ./docker-compose.yml
+        dest: ./
 #    - name: pull images specifed in docker-compose
 #      command: docker-compose -f docker-compose.yml pull
 #    - name: run the pulled docker images in detached mode
